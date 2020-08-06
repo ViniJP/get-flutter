@@ -2,6 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get_app/listaProdutos.dart';
 import 'produto.dart';
+import 'package:email_validator/email_validator.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class PaginaProduto extends StatelessWidget {
 
@@ -13,6 +16,7 @@ class PaginaProduto extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.deepPurple,
         title: Text("GET"),
       ),
       body: SingleChildScrollView(
@@ -85,6 +89,9 @@ class PaginaProduto extends StatelessWidget {
 
 Future<void> showMyDialog(context) async {
 
+  //final DBRef = FirebaseDatabase.instance.reference();
+
+  bool formatoEmailInvalido = false;
 
   return showDialog<void>(
     context: context,
@@ -110,6 +117,11 @@ Future<void> showMyDialog(context) async {
                         hintText: 'Digite o email',
                     ),
                   ),
+                  SizedBox(height: 5.0),
+                  Visibility(
+                    visible: formatoEmailInvalido,
+                      child: Text('Email inválido! Digite novamente.', style: TextStyle(color: Colors.red),)
+                  ),
                 ],
               ),
             ),
@@ -123,8 +135,17 @@ Future<void> showMyDialog(context) async {
               FlatButton(
                 child: Text('Enviar'),
                 onPressed: () {
-                  print(dialogText);
-                  Navigator.of(context).pop();
+                  //print(dialogText);
+
+                  if(EmailValidator.validate(dialogText)){
+                    Firestore.instance.collection('emailCadastrado').document()
+                        .setData({ 'email': dialogText });
+                    Navigator.of(context).pop();
+                    print("Email válido: $dialogText");
+                  } else{
+                    setState(() {formatoEmailInvalido = true; });
+                    print("Email inválido: $dialogText");
+                  }
                 },
               ),
             ],

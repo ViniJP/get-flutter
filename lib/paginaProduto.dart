@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get_app/listaProdutos.dart';
+import 'package:parse_server_sdk/parse_server_sdk.dart';
 import 'produto.dart';
 import 'package:email_validator/email_validator.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class PaginaProduto extends StatelessWidget {
@@ -89,8 +89,6 @@ class PaginaProduto extends StatelessWidget {
 
 Future<void> showMyDialog(context) async {
 
-  //final DBRef = FirebaseDatabase.instance.reference();
-
   bool formatoEmailInvalido = false;
 
   return showDialog<void>(
@@ -134,12 +132,28 @@ Future<void> showMyDialog(context) async {
               ),
               FlatButton(
                 child: Text('Enviar'),
-                onPressed: () {
+                onPressed: () async {
                   //print(dialogText);
 
                   if(EmailValidator.validate(dialogText)){
-                    Firestore.instance.collection('emailCadastrado').document()
-                        .setData({ 'email': dialogText });
+
+                    /*
+                    var email = ParseObject('EmailPreCadastro')
+                      ..set('Email', dialogText);
+
+                    var response = await email.save();
+                    if (response.success) {
+                      print("Email válido, response sucess: " + response.results.first.toString());
+                    } else{
+                      print(response.success.toString());
+                      print(response.statusCode.toString());
+                      print(response.error.code.toString());
+                      print(response.toString());
+                    }
+
+                     */
+
+                    //Firestore.instance.collection('emailCadastrado').document().setData({ 'email': dialogText });
                     Navigator.of(context).pop();
                     print("Email válido: $dialogText");
                   } else{

@@ -4,63 +4,13 @@ import 'package:get_app/listaProdutos.dart';
 import 'package:get_app/paginaEntrega.dart';
 import 'produto.dart';
 import 'paginaProduto.dart';
-import 'package:firebase_core/firebase_core.dart';
+import 'package:parse_server_sdk/parse_server_sdk.dart';
 
 void main() {
   runApp(MyApp());
 }
+
 /*
-class App extends StatefulWidget {
-  _AppState createState() => _AppState();
-}
-
-class _AppState extends State<App> {
-
-
-  // Set default `_initialized` and `_error` state to false
-  bool _initialized = false;
-  bool _error = false;
-
-  // Define an async function to initialize FlutterFire
-  void initializeFlutterFire() async {
-    try {
-      // Wait for Firebase to initialize and set `_initialized` state to true
-      await Firebase.initializeApp();
-      setState(() {
-        _initialized = true;
-      });
-    } catch(e) {
-      // Set `_error` state to true if Firebase initialization fails
-      setState(() {
-        _error = true;
-      });
-    }
-  }
-
-  @override
-  void initState() {
-    initializeFlutterFire();
-    super.initState();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    // Show error message if initialization failed
-    if(_error) {
-      return SomethingWentWrong();
-    }
-
-    // Show a loader until FlutterFire is initialized
-    if (!_initialized) {
-      return Loading();
-    }
-
-
-
-    //return MyApp();
-  }
-}*/
-
 class SomethingWentWrong extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -90,6 +40,8 @@ class Loading extends StatelessWidget {
 
 }
 
+ */
+
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
@@ -116,11 +68,15 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
 
   @override
+  void initState() {
+    super.initState();
+    initData();
+  }
+
+  @override
   Widget build(BuildContext context) {
 
     final List<String> entries = <String>['Prudence', 'Jontex', 'Olla', 'Preserv'];
-
-
 
     return Scaffold(
 
@@ -141,14 +97,10 @@ class ListaProduto extends StatefulWidget {
   const ListaProduto(this.entries);
 
   @override
-  _ListaProdutoState createState() => _ListaProdutoState(entries);
+  _ListaProdutoState createState() => _ListaProdutoState();
 }
 
 class _ListaProdutoState extends State<ListaProduto> {
-
-  final List<String> entries;
-
-  _ListaProdutoState(this.entries);
 
   @override
   Widget build(BuildContext context) {
@@ -193,7 +145,7 @@ class _ListaProdutoState extends State<ListaProduto> {
                           )))
                 ],
               ),
-              Text('${entries[index]}',
+              Text('${widget.entries[index]}',
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 26,
@@ -210,13 +162,12 @@ class _ListaProdutoState extends State<ListaProduto> {
                   itemCount: 1,
                   scrollDirection: Axis.horizontal,
                 ),
-
               )
             ],
           ),
         );
       },
-      itemCount: entries.length,
+      itemCount: widget.entries.length,
 
     );
   }
@@ -424,6 +375,16 @@ class _CardTemplateState extends State<CardTemplate> {
 
   }
 }
+
+Future<void> initData() async{
+  print("init iniciado");
+  var response = await Parse().initialize(
+      Strings.keyApplicationId,
+      Strings.keyParseServerUrl);
+
+  print(response.hasParseBeenInitialized().toString());
+}
+
 
 Future<void> dialogUmClique(context) async {
 

@@ -1,3 +1,5 @@
+import 'package:parse_server_sdk/parse_server_sdk.dart';
+
 class Produto {
   String titulo, descricao, extra, localImagem;
 

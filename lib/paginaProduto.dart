@@ -159,9 +159,7 @@ Future<void> showMyDialog(context) async {
 
                     if (apiResponse.success && apiResponse.count > 0) {
                       print(keyAppName + ': ' + apiResponse.result.toString());
-                    }
-
-                    if(!apiResponse.success){
+                    } else{
                       print("Erro no salvamnto");
                     }
 

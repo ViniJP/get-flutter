@@ -377,12 +377,17 @@ class _CardTemplateState extends State<CardTemplate> {
 }
 
 Future<void> initData() async{
-  print("init iniciado");
   var response = await Parse().initialize(
       Strings.keyApplicationId,
-      Strings.keyParseServerUrl);
+      Strings.keyParseServerUrl,
+  masterKey: Strings.keyParseMasterKey,
+  clientKey: Strings.keyParseClientKey,
+  debug: true,
+  );
 
   print(response.hasParseBeenInitialized().toString());
+  final ParseResponse resposta = await Parse().healthCheck();
+  print(resposta.success);
 }
 
 

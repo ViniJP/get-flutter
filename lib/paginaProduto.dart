@@ -150,8 +150,20 @@ Future<void> showMyDialog(context) async {
                       print(response.error.code.toString());
                       print(response.toString());
                     }
-
                      */
+
+                    final ParseObject newObject = ParseObject('EmailPreCadastro');
+                    newObject.set<String>('Email', dialogText);
+
+                    final ParseResponse apiResponse = await newObject.create();
+
+                    if (apiResponse.success && apiResponse.count > 0) {
+                      print(keyAppName + ': ' + apiResponse.result.toString());
+                    }
+
+                    if(!apiResponse.success){
+                      print("Erro no salvamnto");
+                    }
 
                     //Firestore.instance.collection('emailCadastrado').document().setData({ 'email': dialogText });
                     Navigator.of(context).pop();

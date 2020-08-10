@@ -1,6 +1,9 @@
 class Strings {
   static const String keyApplicationId = 'Ag9WyNln6nh7wtvT2kjLOSQQeAc3JlJc4Z3UyPdZ';
   static const String keyParseServerUrl = 'https://parseapi.back4app.com/';
+  static const String keyParseMasterKey = 'tS2owwufWIbC2ZeX8sN4tAwEhAyBQfBMxRt7CHVS';
+  static const String keyParseClientKey = 'laQdnD6oHxCWqBHViYQQABAwHaUSVBeicXlD2Ubq';
+
 
   static const String texto_alertdialog = 'Olá, estamos na fase Beta, os produtos ainda não estão disponíveis para compra, cadastre seu email e informaremos a compra estiver disponível.';
   static const String titulo_alertdialog = 'Inscreva-se';

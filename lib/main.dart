@@ -76,7 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
 
-    final List<String> entries = <String>['Prudence', 'Jontex', 'Olla', 'Preserv'];
+    final List<String> entries = <String>['Xbox One', 'Xbox X', 'PS4', 'PS5'];
 
     return Scaffold(
 
@@ -217,53 +217,53 @@ class _ListaProdutoState extends State<ListaProduto> {
   }
 
   List burscarCards(int index) {
-    final List<Produto> produtoPrudence2 = <Produto>[
-      Produto(titulo: Strings.titulo_prudence_classico, descricao: Strings.desc_prudence_classico , extra: Strings.extra_prudence_classico, localImagem: Strings.imagem_prudence_classico),
-      Produto(titulo: Strings.titulo_prudence_ice, descricao: Strings.desc_prudence_ice , extra: Strings.extra_prudence_ice, localImagem: Strings.imagem_prudence_ice),
-      Produto(titulo: Strings.titulo_prudence_morango, descricao: Strings.desc_prudence_morango , extra: Strings.extra_prudence_morango, localImagem: Strings.imagem_prudence_morango),
-      Produto(titulo: Strings.titulo_prudence_retardante, descricao: Strings.desc_prudence_retardante , extra: Strings.extra_prudence_retardante, localImagem: Strings.imagem_prudence_retardante),
-      Produto(titulo: Strings.titulo_prudence_ultraSensivel, descricao: Strings.desc_prudence_ultraSensivel , extra: Strings.extra_prudence_ultraSensivel, localImagem: Strings.imagem_prudence_ultraSensivel),
+    final List<Produto> produto1 = <Produto>[ // xbox one
+      Produto(titulo: Strings.titulo_xboxOne_cyberpunk, descricao: Strings.desc_xboxOne_cyberpunk , extra: Strings.extra_xboxOne_cyberpunk, localImagem: Strings.imagem_xboxOne_cyberpunk),
+      Produto(titulo: Strings.titulo_xboxOne_pes21, descricao: Strings.desc_xboxOne_pes21 , extra: Strings.extra_xboxOne_pes21, localImagem: Strings.imagem_xboxOne_pes21),
+      Produto(titulo: Strings.titulo_xboxOne_avengers, descricao: Strings.desc_xboxOne_avengers , extra: Strings.extra_xboxOne_avengers, localImagem: Strings.imagem_xboxOne_avengers),
+      Produto(titulo: Strings.titulo_xboxOne_gta5, descricao: Strings.desc_xboxOne_gta5 , extra: Strings.extra_xboxOne_gta5, localImagem: Strings.imagem_xboxOne_gta5),
+      Produto(titulo: Strings.titulo_xboxOne_witcher3, descricao: Strings.desc_xboxOne_witcher3 , extra: Strings.extra_xboxOne_witcher3, localImagem: Strings.imagem_xboxOne_witcher3),
     ];
 
-    final List<Produto> produtoJontex = <Produto>[
-      Produto(titulo: Strings.titulo_Jontex_classico, descricao: Strings.desc_Jontex_classico , extra: Strings.extra_Jontex_classico, localImagem: Strings.imagem_Jontex_classico),
-      Produto(titulo: Strings.titulo_Jontex_maca, descricao: Strings.desc_Jontex_maca , extra: Strings.extra_Jontex_maca, localImagem: Strings.imagem_Jontex_maca),
-      Produto(titulo: Strings.titulo_Jontex_sensation, descricao: Strings.desc_Jontex_sensation , extra: Strings.extra_Jontex_sensation, localImagem: Strings.imagem_Jontex_sensation),
-      Produto(titulo: Strings.titulo_Jontex_sensitive, descricao: Strings.desc_Jontex_sensitive , extra: Strings.extra_Jontex_sensitive, localImagem: Strings.imagem_Jontex_sensitive),
-      Produto(titulo: Strings.titulo_Jontex_xl, descricao: Strings.desc_Jontex_xl , extra: Strings.extra_Jontex_xl, localImagem: Strings.imagem_Jontex_xl),
+    final List<Produto> produto2 = <Produto>[ // xbox x
+      Produto(titulo: Strings.titulo_xboxX_mk, descricao: Strings.desc_xboxX_mk , extra: Strings.extra_xboxX_mk, localImagem: Strings.imagem_xboxX_mk),
+      Produto(titulo: Strings.titulo_xboxX_cod, descricao: Strings.desc_xboxX_cod , extra: Strings.extra_xboxX_cod, localImagem: Strings.imagem_xboxX_cod),
+      Produto(titulo: Strings.titulo_xboxX_trainS, descricao: Strings.desc_xboxX_trainS , extra: Strings.extra_xboxX_trainS, localImagem: Strings.imagem_xboxX_trainS),
+      Produto(titulo: Strings.titulo_xboxX_farCry, descricao: Strings.desc_xboxX_farCry , extra: Strings.extra_xboxX_farCry, localImagem: Strings.imagem_xboxX_farCry),
+      Produto(titulo: Strings.titulo_xboxX_halo, descricao: Strings.desc_xboxX_halo , extra: Strings.extra_xboxX_halo, localImagem: Strings.imagem_xboxX_halo),
     ];
 
-    final List<Produto> produtoOlla = <Produto>[
-      Produto(titulo: Strings.titulo_Olla_classico, descricao: Strings.desc_Olla_classico , extra: Strings.extra_Olla_classico, localImagem: Strings.imagem_Olla_classico),
-      Produto(titulo: Strings.titulo_Olla_menta, descricao: Strings.desc_Olla_menta , extra: Strings.extra_Olla_menta, localImagem: Strings.imagem_Olla_menta),
-      Produto(titulo: Strings.titulo_Olla_morango, descricao: Strings.desc_Olla_morango , extra: Strings.extra_Olla_morango, localImagem: Strings.imagem_Olla_morango),
-      Produto(titulo: Strings.titulo_Olla_sensitive, descricao: Strings.desc_Olla_sensitive , extra: Strings.extra_Olla_sensitive, localImagem: Strings.imagem_Olla_sensitive),
-      Produto(titulo: Strings.titulo_Olla_stimulus, descricao: Strings.desc_Olla_stimulus , extra: Strings.extra_Olla_stimulus, localImagem: Strings.imagem_Olla_stimulus),
+    final List<Produto> produto3 = <Produto>[ // ps4
+      Produto(titulo: Strings.titulo_ps4_lastUs, descricao: Strings.desc_ps4_lastUs , extra: Strings.extra_ps4_lastUs, localImagem: Strings.imagem_ps4_lastUs),
+      Produto(titulo: Strings.titulo_ps4_daysGone, descricao: Strings.desc_ps4_daysGone , extra: Strings.extra_ps4_daysGone, localImagem: Strings.imagem_ps4_daysGone),
+      Produto(titulo: Strings.titulo_ps4_redDead, descricao: Strings.desc_ps4_redDead , extra: Strings.extra_ps4_redDead, localImagem: Strings.imagem_ps4_redDead),
+      Produto(titulo: Strings.titulo_ps4_fifa21, descricao: Strings.desc_ps4_fifa21 , extra: Strings.extra_ps4_fifa21, localImagem: Strings.imagem_ps4_fifa21),
+      Produto(titulo: Strings.titulo_ps4_watchDogs, descricao: Strings.desc_ps4_watchDogs , extra: Strings.extra_ps4_watchDogs, localImagem: Strings.imagem_ps4_watchDogs),
     ];
 
-    final List<Produto> produtoPreserv = <Produto>[
-      Produto(titulo: Strings.titulo_Preserve_altaProt, descricao: Strings.desc_Preserve_altaProt , extra: Strings.extra_Preserve_altaProt, localImagem: Strings.imagem_Preserve_altaProt),
-      Produto(titulo: Strings.titulo_Preserve_Extra_sensivel, descricao: Strings.desc_Preserve_Extra_sensivel , extra: Strings.extra_Preserve_Extra_sensivel, localImagem: Strings.imagem_Preserve_Extra_sensivel),
-      Produto(titulo: Strings.titulo_Preserve_Lite, descricao: Strings.desc_Preserve_Lite , extra: Strings.extra_Preserve_Lite, localImagem: Strings.imagem_Preserve_Lite),
-      Produto(titulo: Strings.titulo_Preserve_Prolong, descricao: Strings.desc_Preserve_Prolong , extra: Strings.extra_Preserve_Prolong, localImagem: Strings.imagem_Preserve_Prolong),
-      Produto(titulo: Strings.titulo_Preserve_Teen, descricao: Strings.desc_Preserve_Teen , extra: Strings.extra_Preserve_Teen, localImagem: Strings.imagem_Preserve_Teen),
+    final List<Produto> produto4 = <Produto>[ // ps5 / ps5_destruction
+      Produto(titulo: Strings.titulo_ps5_demonSouls, descricao: Strings.desc_ps5_demonSouls , extra: Strings.extra_ps5_demonSouls, localImagem: Strings.imagem_ps5_demonSouls),
+      Produto(titulo: Strings.titulo_ps5_spiderMan, descricao: Strings.desc_ps5_spiderMan , extra: Strings.extra_ps5_spiderMan, localImagem: Strings.imagem_ps5_spiderMan),
+      Produto(titulo: Strings.titulo_ps5_valhalla, descricao: Strings.desc_ps5_valhalla , extra: Strings.extra_ps5_valhalla, localImagem: Strings.imagem_ps5_valhalla),
+      Produto(titulo: Strings.titulo_ps5_sackboy, descricao: Strings.desc_ps5_sackboy , extra: Strings.extra_ps5_sackboy, localImagem: Strings.imagem_ps5_sackboy),
+      Produto(titulo: Strings.titulo_ps5_destruction, descricao: Strings.desc_ps5_destruction , extra: Strings.extra_ps5_destruction, localImagem: Strings.imagem_ps5_destruction),
     ];
 
     switch(index){
       case 0:
-        return produtoPrudence2.map((e) => CardTemplate(e)).toList();
+        return produto1.map((e) => CardTemplate(e)).toList();
         break;
       case 1:
-        return produtoJontex.map((e) => CardTemplate(e)).toList();
+        return produto2.map((e) => CardTemplate(e)).toList();
         break;
       case 2:
-        return produtoOlla.map((e) => CardTemplate(e)).toList();
+        return produto3.map((e) => CardTemplate(e)).toList();
         break;
       case 3:
-        return produtoPreserv.map((e) => CardTemplate(e)).toList();
+        return produto4.map((e) => CardTemplate(e)).toList();
         break;
       default:
-        return produtoPrudence2.map((e) => CardTemplate(e)).toList();
+        return produto1.map((e) => CardTemplate(e)).toList();
         break;
     }
   }
@@ -349,7 +349,7 @@ class _CardTemplateState extends State<CardTemplate> {
                 ),
                 Row(
                   children: <Widget>[
-                    Expanded(child: Text("RS 9,99", textAlign: TextAlign.center,)),
+                    Expanded(child: Text("RS 159,99", textAlign: TextAlign.center,)),
                     Expanded(child: Image.asset('assets/star_icon.png', height: 25, width: 50,))
                   ],
                 ),

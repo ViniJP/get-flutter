@@ -56,10 +56,10 @@ flutter:
   #   - images/a_dot_ham.jpeg
 
   assets:
-    - assets/Jontex/
-    - assets/Olla/
-    - assets/Preserve/
-    - assets/Prudence/
+    - assets/ps4/
+    - assets/ps5/
+    - assets/xboxOne/
+    - assets/xboxX/
     - assets/envelope.jpg
     - assets/star_icon.png
 

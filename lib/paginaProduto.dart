@@ -40,7 +40,7 @@ class PaginaProduto extends StatelessWidget {
                 SizedBox(height: 20),
                 Row(
                   children: <Widget>[
-                    Expanded(child: Text("RS 9,99",
+                    Expanded(child: Text("RS 159,99",
                       textAlign: TextAlign.center,
                       style: TextStyle(fontSize: 22),
                     )),
